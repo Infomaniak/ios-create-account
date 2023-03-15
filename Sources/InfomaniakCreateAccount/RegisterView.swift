@@ -113,7 +113,7 @@ public struct RegisterView: View {
                     .ignoresSafeArea()
             }
         }
-        .ignoresSafeArea(edges: [.bottom])
+        .background(Color(uiColor: UIColor(red: 0.96, green: 0.96, blue: 0.99, alpha: 1.00)))
     }
 
     func cleanRegistrationData() {
