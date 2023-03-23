@@ -61,7 +61,7 @@ public struct RegisterView: View {
 
     var registerWebView: some View {
         WebView(
-            initialURL: URL(string: "https://welcome.\(ApiEnvironment.current.host)/signup/\(registrationProcess.name)/steps")!
+            initialURL: URL(string: "https://welcome.\(ApiEnvironment.current.host)/signup/\(registrationProcess.name)?app=true")!
         ) { _ in
             withAnimation {
                 isLoading = false
@@ -128,6 +128,6 @@ public struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView(registrationProcess: .mail) { _ in }
+            RegisterView(registrationProcess: .mail) { _ in }
+        }
     }
-}
