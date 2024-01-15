@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire",
       "state" : {
-        "revision" : "78424be314842833c04bc3bef5b72e85fff99204",
-        "version" : "5.6.4"
+        "revision" : "3dc6a42c7727c49bf26508e29b0a0b35f9c7e1ad",
+        "version" : "5.8.1"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Infomaniak/ios-core",
       "state" : {
-        "revision" : "265c052eb2ed31a689a0fac4283c5040eff666ed",
-        "version" : "3.6.0"
+        "revision" : "504932a51c978b6aa0bbc086054875a36241674e",
+        "version" : "5.0.1"
       }
     },
     {
@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Infomaniak/ios-core-ui",
       "state" : {
-        "revision" : "93051b3183db87262a7c53ead3b479e01f888edf",
-        "version" : "2.2.0"
+        "revision" : "2ade7b9cfc5942d1126570b40a6680e4ffcff105",
+        "version" : "3.0.0"
       }
     },
     {
@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Infomaniak/ios-dependency-injection",
       "state" : {
-        "revision" : "41a99aeb652d5294355129bfa70d1ea8c17b9980",
-        "version" : "1.1.10"
+        "revision" : "8dc9e67e6d3d9f4f5bd02d693a7ce1f93b125bcd",
+        "version" : "2.0.1"
       }
     },
     {
@@ -50,16 +50,16 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher",
       "state" : {
-        "revision" : "af4be924ad984cf4d16f4ae4df424e79a443d435",
-        "version" : "7.6.2"
+        "revision" : "3ec0ab0bca4feb56e8b33e289c9496e89059dd08",
+        "version" : "7.10.2"
       }
     },
     {
       "identity" : "localizekit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/PhilippeWeidmann/LocalizeKit",
+      "location" : "https://github.com/Infomaniak/LocalizeKit",
       "state" : {
-        "revision" : "1abb86ce614ae8d925bf82123c7360ab95827975",
+        "revision" : "a8f5b63a242a7cb5d8939db011fc9ee871a2a300",
         "version" : "1.0.1"
       }
     },
@@ -77,8 +77,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/realm-core.git",
       "state" : {
-        "revision" : "dd91f5f967c4ae89c37e24ab2a0315c31106648f",
-        "version" : "13.6.0"
+        "revision" : "7227d6a447821c28895daa099b6c7cd4c99d461b",
+        "version" : "13.25.1"
       }
     },
     {
@@ -86,8 +86,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/realm-swift",
       "state" : {
-        "revision" : "8ac6fe1aa5d0fb0100062d80863416a4d70de8ca",
-        "version" : "10.37.0"
+        "revision" : "836cc4b8619886f979f8961c3f592a82b0741591",
+        "version" : "10.45.3"
       }
     },
     {
@@ -95,14 +95,14 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/getsentry/sentry-cocoa",
       "state" : {
-        "revision" : "cf43eac1aa12017868c257ad3854ad87a5de0758",
-        "version" : "7.31.5"
+        "revision" : "3b9a8e69ca296bd8cd0e317ad7a448e5daf4a342",
+        "version" : "8.18.0"
       }
     },
     {
       "identity" : "snackbar.swift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/PhilippeWeidmann/SnackBar.swift",
+      "location" : "https://github.com/Infomaniak/SnackBar.swift",
       "state" : {
         "revision" : "9a3c0c71796625ec3804df993483aa80266fa1ff",
         "version" : "1.1.0"
