@@ -16,12 +16,12 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import InfomaniakCore
+@preconcurrency import InfomaniakCore
 import InfomaniakCoreSwiftUI
 import SwiftUI
 import WebKit
 
-public struct RegistrationProcess {
+public struct RegistrationProcess: Sendable {
     let name: String
     let landingHost: String
 
