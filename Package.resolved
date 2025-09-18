@@ -1,5 +1,5 @@
 {
-  "originHash" : "a555f6715e313c1ce53edb5f1738d0efdae6c54f57871f5e13c8225c46b6364e",
+  "originHash" : "4c6f6c1b01031be3111598998ea66b8718bfc8786d8a45cc6d1f39b5afb4d1bd",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Infomaniak/ios-core",
       "state" : {
-        "revision" : "d2dfb4c434816bae2b1e12dc748e72c15f12ef27",
-        "version" : "16.0.1"
+        "revision" : "9269397a5974b8024124a15ffb34205a12090065",
+        "version" : "17.0.0"
       }
     },
     {
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Infomaniak/ios-core-ui",
       "state" : {
-        "revision" : "63d4a097ae4d7cb6ed8b9bf4ef72ef528c9d0042",
-        "version" : "22.0.0"
+        "revision" : "1d0fe5f625c811e86c30fa764744733bf68b2ff1",
+        "version" : "23.0.0"
       }
     },
     {
@@ -141,8 +141,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/siteline/SwiftUI-Introspect",
       "state" : {
-        "revision" : "9bedf1e79c7b7c34b35b74bef126f56d2400ef7f",
-        "version" : "1.4.0-beta.4"
+        "revision" : "a08b87f96b41055577721a6e397562b21ad52454",
+        "version" : "26.0.0"
       }
     },
     {
