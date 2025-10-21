@@ -25,8 +25,13 @@ public struct RegistrationProcess: Sendable {
     let name: String
     let landingHost: String
 
-    public static let drive = RegistrationProcess(name: "ikdrive", landingHost: "drive.\(ApiEnvironment.current.host)")
-    public static let mail = RegistrationProcess(name: "ikmail", landingHost: "mail.\(ApiEnvironment.current.host)")
+    public init(name: String, landingHost: String = "ksuite.\(ApiEnvironment.current.host)") {
+        self.name = name
+        self.landingHost = landingHost
+    }
+
+    public static let drive = RegistrationProcess(name: "ikdrive")
+    public static let mail = RegistrationProcess(name: "ikmail")
 }
 
 public struct RegisterView: View {
