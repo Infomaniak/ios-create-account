@@ -32,6 +32,7 @@ public struct RegistrationProcess: Sendable {
 
     public static let drive = RegistrationProcess(name: "ikdrive")
     public static let mail = RegistrationProcess(name: "ikmail")
+    public static let ksuite = RegistrationProcess(name: "myksuite")
 }
 
 public struct RegisterView: View {
