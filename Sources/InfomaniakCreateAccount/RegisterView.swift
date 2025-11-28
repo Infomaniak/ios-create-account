@@ -80,6 +80,8 @@ public struct RegisterView: View {
                 return
             }
 
+            webView.scrollView.contentInset.bottom = -webView.safeAreaInsets.bottom
+
             if host == registrationProcess.landingHost {
                 decision(.cancel)
 
@@ -134,8 +136,10 @@ public struct RegisterView: View {
     }
 }
 
-struct RegisterView_Previews: PreviewProvider {
-    static var previews: some View {
-        RegisterView(registrationProcess: .mail) { _ in }
-    }
+#Preview("kSuite") {
+    RegisterView(registrationProcess: .mail) { _ in }
+}
+
+#Preview("Euria") {
+    RegisterView(registrationProcess: .euria) { _ in }
 }
