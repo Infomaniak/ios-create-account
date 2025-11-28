@@ -24,14 +24,17 @@ import WebKit
 public struct RegistrationProcess: Sendable {
     let name: String
     let landingHost: String
+    let urlString: String
 
-    public init(name: String, landingHost: String = "ksuite.\(ApiEnvironment.current.host)") {
+    public init(name: String, landingHost: String = "ksuite.\(ApiEnvironment.current.host)", additionalPath: String) {
         self.name = name
         self.landingHost = landingHost
+        urlString = "https://welcome.\(ApiEnvironment.current.host)/signup/\(name)\(additionalPath)"
     }
 
-    public static let drive = RegistrationProcess(name: "ikdrive")
-    public static let mail = RegistrationProcess(name: "ikmail")
+    public static let drive = RegistrationProcess(name: "ikdrive", additionalPath: "?app=true")
+    public static let mail = RegistrationProcess(name: "ikmail", additionalPath: "?app=true")
+    public static let euria = RegistrationProcess(name: "euria", additionalPath: "/myksuite")
 }
 
 public struct RegisterView: View {
@@ -66,7 +69,7 @@ public struct RegisterView: View {
 
     var registerWebView: some View {
         WebView(
-            initialURL: URL(string: "https://welcome.\(ApiEnvironment.current.host)/signup/\(registrationProcess.name)?app=true")!
+            initialURL: URL(string: registrationProcess.urlString)!
         ) { _ in
             withAnimation {
                 isLoading = false
@@ -133,6 +136,6 @@ public struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-            RegisterView(registrationProcess: .mail) { _ in }
-        }
+        RegisterView(registrationProcess: .mail) { _ in }
     }
+}
