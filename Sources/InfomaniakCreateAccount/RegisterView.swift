@@ -26,15 +26,15 @@ public struct RegistrationProcess: Sendable {
     let landingHost: String
     let urlString: String
 
-    public init(name: String, landingHost: String = "ksuite.\(ApiEnvironment.current.host)", additionalPath: String) {
+    public init(name: String, landingHost: String = "ksuite.\(ApiEnvironment.current.host)", additionalPath: String? = nil) {
         self.name = name
         self.landingHost = landingHost
-        urlString = "https://welcome.\(ApiEnvironment.current.host)/signup/\(name)\(additionalPath)"
+        urlString = "https://welcome.\(ApiEnvironment.current.host)/signup/\(name)\(additionalPath ?? "")"
     }
 
     public static let drive = RegistrationProcess(name: "ikdrive", additionalPath: "?app=true")
     public static let mail = RegistrationProcess(name: "ikmail", additionalPath: "?app=true")
-    public static let euria = RegistrationProcess(name: "euria", additionalPath: "/myksuite")
+    public static let euria = RegistrationProcess(name: "euria")
 }
 
 public struct RegisterView: View {
