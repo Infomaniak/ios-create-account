@@ -99,6 +99,11 @@ public struct RegisterView: View {
             } else if host == "login.\(ApiEnvironment.current.host))" {
                 decision(.cancel)
                 dismiss()
+            } else if navigationAction.navigationType == .linkActivated,
+                      navigationAction.targetFrame == nil,
+                      let url = navigationAction.request.url {
+                UIApplication.shared.open(url)
+                decision(.cancel)
             } else {
                 decision(.allow)
             }
