@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "InfomaniakCreateAccount",
     platforms: [
-        .iOS(.v15),
+        .iOS(.v16),
     ],
     products: [
         .library(
@@ -15,8 +15,8 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/Infomaniak/ios-core", .upToNextMajor(from: "18.0.0")),
-        .package(url: "https://github.com/Infomaniak/ios-core-ui", .upToNextMajor(from: "24.0.0")),
+        .package(url: "https://github.com/Infomaniak/ios-core", .upToNextMajor(from: "18.12.0")),
+        .package(url: "https://github.com/Infomaniak/ios-core-ui", .upToNextMajor(from: "25.0.0")),
     ],
     targets: [
         .target(

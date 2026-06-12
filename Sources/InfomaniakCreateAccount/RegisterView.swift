@@ -54,18 +54,10 @@ public struct RegisterView: View {
     }
 
     public var body: some View {
-        if #available(iOS 16.0, *) {
-            NavigationStack {
-                registerWebView
-            }
-            .interactiveDismissDisabled()
-        } else {
-            NavigationView {
-                registerWebView
-            }
-            .navigationViewStyle(.stack)
-            .interactiveDismissDisabled()
+        NavigationStack {
+            registerWebView
         }
+        .interactiveDismissDisabled()
     }
 
     var registerWebView: some View {
