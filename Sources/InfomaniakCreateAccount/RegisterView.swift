@@ -15,11 +15,12 @@
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+#if canImport(UIKit)
 @preconcurrency import InfomaniakCore
 import InfomaniakCoreSwiftUI
 import SwiftUI
 import WebKit
+import UIKit
 
 public struct RegistrationProcess: Sendable {
     let name: String
@@ -141,3 +142,4 @@ public struct RegisterView: View {
 #Preview("Euria") {
     RegisterView(registrationProcess: .euria) { _ in }
 }
+#endif
