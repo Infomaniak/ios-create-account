@@ -21,7 +21,17 @@ import InfomaniakCoreSwiftUI
 import SwiftUI
 import WebKit
 
-public struct RegistrationProcess: Sendable {
+#if canImport(UIKit)
+import UIKit
+
+public typealias RegistrationPresenterController = UIViewController
+#elseif canImport(AppKit)
+import AppKit
+
+public typealias RegistrationPresenterController = NSViewController
+#endif
+
+public struct RegistrationProcess: Equatable, Hashable, Sendable {
     let name: String
     let landingHost: String
     let urlString: String
@@ -40,32 +50,26 @@ public struct RegistrationProcess: Sendable {
 
 public struct RegisterView: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.openURL) private var openURL
+
     @State var isLoading = true
 
     let registrationProcess: RegistrationProcess
-    let onRegistrationCompleted: ((UIViewController?) -> Void)?
+    let onRegistrationCompleted: ((RegistrationPresenterController?) -> Void)?
 
     public init(
         registrationProcess: RegistrationProcess,
-        onRegistrationCompleted: ((UIViewController?) -> Void)? = nil
+        onRegistrationCompleted: ((RegistrationPresenterController?) -> Void)? = nil
     ) {
         self.registrationProcess = registrationProcess
         self.onRegistrationCompleted = onRegistrationCompleted
     }
 
     public var body: some View {
-        if #available(iOS 16.0, *) {
-            NavigationStack {
-                registerWebView
-            }
-            .interactiveDismissDisabled()
-        } else {
-            NavigationView {
-                registerWebView
-            }
-            .navigationViewStyle(.stack)
-            .interactiveDismissDisabled()
+        NavigationStack {
+            registerWebView
         }
+        .interactiveDismissDisabled()
     }
 
     var registerWebView: some View {
@@ -81,29 +85,22 @@ public struct RegisterView: View {
                 return
             }
 
+            #if canImport(UIKit)
             webView.scrollView.contentInset.bottom = -webView.safeAreaInsets.bottom
+            #endif
 
             if host == registrationProcess.landingHost {
                 decision(.cancel)
 
-                var parentViewController: UIViewController? {
-                    var parentResponder: UIResponder? = webView.next
-                    while parentResponder != nil {
-                        if let viewController = parentResponder as? UIViewController {
-                            return viewController
-                        }
-                        parentResponder = parentResponder?.next
-                    }
-                    return nil
-                }
-                onRegistrationCompleted?(parentViewController?.navigationController)
+                let controller = findParentViewController(from: webView)
+                onRegistrationCompleted?(controller)
             } else if host == "login.\(ApiEnvironment.current.host))" {
                 decision(.cancel)
                 dismiss()
             } else if navigationAction.navigationType == .linkActivated,
                       navigationAction.targetFrame == nil,
                       let url = navigationAction.request.url {
-                UIApplication.shared.open(url)
+                openURL(url)
                 decision(.cancel)
             } else {
                 decision(.allow)
@@ -129,7 +126,11 @@ public struct RegisterView: View {
                     .ignoresSafeArea()
             }
         }
+        #if canImport(UIKit)
         .background(Color(uiColor: UIColor(red: 0.96, green: 0.96, blue: 0.99, alpha: 1.00)))
+        #elseif canImport(AppKit)
+        .background(Color(nsColor: NSColor(red: 0.96, green: 0.96, blue: 0.99, alpha: 1.00)))
+        #endif
     }
 
     func cleanRegistrationData() {
@@ -140,6 +141,30 @@ public struct RegisterView: View {
             }
         }
     }
+
+    #if canImport(UIKit)
+    func findParentViewController(from view: UIView) -> RegistrationPresenterController? {
+        var parentResponder: UIResponder? = view
+        while parentResponder != nil {
+            if let viewController = parentResponder as? RegistrationPresenterController {
+                return viewController?.navigationController
+            }
+            parentResponder = parentResponder?.next
+        }
+        return nil
+    }
+
+    #elseif canImport(AppKit)
+    func findParentViewController(from view: NSView) -> RegistrationPresenterController? {
+        var parentResponder: NSResponder? = view
+        while parentResponder != nil {
+            if let viewController = parentResponder as? RegistrationPresenterController {
+                return viewController.parent
+            }
+            parentResponder = parentResponder?.nextResponder
+        }
+        return nil
+    }#endif
 }
 
 #Preview("kSuite") {
