@@ -147,7 +147,7 @@ public struct RegisterView: View {
         var parentResponder: UIResponder? = view
         while parentResponder != nil {
             if let viewController = parentResponder as? RegistrationPresenterController {
-                return viewController?.navigationController
+                return viewController.navigationController
             }
             parentResponder = parentResponder?.next
         }
