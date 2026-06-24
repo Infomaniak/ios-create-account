@@ -26,6 +26,10 @@ let package = Package(
                 .product(name: "InfomaniakCore", package: "ios-core"),
                 .product(name: "InfomaniakCoreSwiftUI", package: "ios-core-ui")
             ]
-        )
+        ),
+        .testTarget(
+            name: "InfomaniakCreateAccountTests",
+            dependencies: ["InfomaniakCreateAccount"]
+        ),
     ]
 )
