@@ -21,6 +21,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Build
-        run: xcodebuild -scheme ios-create-account-Package build -sdk iphonesimulator -destination "generic/platform=iOS"
+        run: xcodebuild -scheme InfomaniakCreateAccount build -sdk iphonesimulator -destination "generic/platform=iOS"
       - name: Test
-        run: xcodebuild -scheme ios-create-account-Package test -destination "platform=iOS Simulator,name=iPhone 17,OS=latest"
+        run: xcodebuild -scheme InfomaniakCreateAccount test -destination "platform=iOS Simulator,name=iPhone 17,OS=latest"
