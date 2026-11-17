@@ -1,5 +1,5 @@
 {
-  "originHash" : "ce45fe7099ca002df50030bc6c8e26682849a01fbe417253a94063c86e9f40bf",
+  "originHash" : "b6aef510ac3ff12b449afe7b404a3c5871a7a3fbef485c4b7b6e48b45e6c6e50",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Infomaniak/ios-core",
       "state" : {
-        "revision" : "7ffc943badfc308a4a1ee0bda8da2367a492a4d6",
-        "version" : "20.0.0"
+        "revision" : "a2ccfeadb409fb6664213dc534f27ea5857ede72",
+        "version" : "21.0.0"
       }
     },
     {
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Infomaniak/ios-core-ui",
       "state" : {
-        "revision" : "2db5b1dad450bd0fd3d8a9903abdd2dd41b0e420",
-        "version" : "28.0.0"
+        "revision" : "66fa8f505bd911eef59a1c8454248a9f59c4a9af",
+        "version" : "29.0.0"
       }
     },
     {
@@ -105,8 +105,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/getsentry/sentry-cocoa",
       "state" : {
-        "revision" : "43abfbf9a26089ad34604c718ad0935440caf1d4",
-        "version" : "9.18.0"
+        "revision" : "485e0622e00d60d71eb6b519822188e2eb7c29e3",
+        "version" : "9.35.0"
       }
     },
     {
